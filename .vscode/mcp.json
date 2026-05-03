@@ -1,0 +1,16 @@
+{
+  "servers": {
+    "brainsync": {
+      "command": "node",
+      "args": [
+        "/Users/gugank/.vscode/extensions/dawoodahmad.brainsync-3.0.11/dist/mcp-server.js",
+        "--db",
+        "/Users/gugank/.brainsync/magicpin-ai-challenge/state.dat"
+      ],
+      "type": "stdio",
+      "env": {
+        "BRAINSYNC_ENV_FILE": "/Users/gugank/.brainsync/magicpin-ai-challenge/mcp-secret-env.json"
+      }
+    }
+  }
+}

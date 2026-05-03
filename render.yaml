@@ -1,0 +1,18 @@
+# render.yaml — Blueprint for Render.com deployment
+services:
+  - type: web
+    name: vera-bot
+    runtime: python
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn bot:app --host 0.0.0.0 --port $PORT
+    envVars:
+      - key: GEMINI_API_KEY
+        sync: false
+      - key: LLM_PROVIDER
+        value: gemini
+      - key: LLM_MODEL
+        value: gemini-2.0-flash
+      - key: PYTHON_VERSION
+        value: "3.11"
+    healthCheckPath: /v1/healthz
