@@ -15,8 +15,8 @@ logger = logging.getLogger("vera.composer")
 
 # ── LLM Configuration ──
 
-LLM_PROVIDER = os.environ.get("LLM_PROVIDER", "gemini")
-LLM_API_KEY = os.environ.get("LLM_API_KEY", os.environ.get("GEMINI_API_KEY", ""))
+LLM_PROVIDER = os.environ.get("LLM_PROVIDER", "cerebras")
+LLM_API_KEY = os.environ.get("LLM_API_KEY", "csk-cn9n9pm45995f29262my4pmpcctc5n5cvwxy3ytx8mhp5evn")
 LLM_MODEL = os.environ.get("LLM_MODEL", "")
 
 
