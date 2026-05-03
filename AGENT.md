@@ -1,5 +1,5 @@
 # Project Notes — magicpin-ai-challenge
-> 25 notes | Updated: 03/05/2026
+> 441 notes | Updated: 03/05/2026
 
 ## Safety Rules
 
@@ -7,8 +7,8 @@
 - **NEVER** delete untracked files or folders blindly. Always backup or stash before bulk edits.
 
 ## Quick Reference
-- 22 warnings → see `.agent-mem/gotchas.md`
-- 225 conventions → see `.agent-mem/patterns.md`
+- 24 warnings → see `.agent-mem/gotchas.md`
+- 245 conventions → see `.agent-mem/patterns.md`
 - Codebase map → see `.agent-mem/project-brief.md`
 - Active work → see `.agent-mem/active-context.md`
 

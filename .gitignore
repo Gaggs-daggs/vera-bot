@@ -19,3 +19,7 @@ build/
 .windsurfrules
 .gemini/
 .cline/
+
+AGENT.md
+CLAUDE.md
+.agent-mem/

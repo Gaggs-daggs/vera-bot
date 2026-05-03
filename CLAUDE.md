@@ -1,6 +1,6 @@
-# magicpin-ai-challenge — Project Memory
+# vera-bot — Project Memory
 
-> Auto-synced | 259 observations
+> Auto-synced | 690 observations
 
 **Stack:** Python · FastAPI
 
