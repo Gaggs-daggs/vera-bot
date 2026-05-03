@@ -39,6 +39,28 @@ def _call_llm(prompt: str, system: str = None) -> str:
         data = json.loads(resp.read().decode("utf-8"))
         return data["candidates"][0]["content"]["parts"][0]["text"]
 
+    elif LLM_PROVIDER == "cerebras":
+        model = LLM_MODEL or "llama3.1-8b"
+        api_key = LLM_API_KEY or os.environ.get("CEREBRAS_API_KEY", "")
+        messages = []
+        if system:
+            messages.append({"role": "system", "content": system})
+        messages.append({"role": "user", "content": prompt})
+        body = json.dumps({
+            "model": model, 
+            "messages": messages,
+            "temperature": 0.15, 
+            "max_tokens": 2000
+        }).encode("utf-8")
+        req = urllib.request.Request(
+            "https://api.cerebras.ai/v1/chat/completions",
+            data=body,
+            headers={"Authorization": f"Bearer {api_key}", "Content-Type": "application/json"}
+        )
+        resp = urllib.request.urlopen(req, timeout=25)
+        data = json.loads(resp.read().decode("utf-8"))
+        return data["choices"][0]["message"]["content"]
+
     elif LLM_PROVIDER == "openai":
         model = LLM_MODEL or "gpt-4o-mini"
         api_key = LLM_API_KEY or os.environ.get("OPENAI_API_KEY", "")
