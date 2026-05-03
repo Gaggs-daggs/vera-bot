@@ -55,7 +55,11 @@ def _call_llm(prompt: str, system: str = None) -> str:
         req = urllib.request.Request(
             "https://api.cerebras.ai/v1/chat/completions",
             data=body,
-            headers={"Authorization": f"Bearer {api_key}", "Content-Type": "application/json"}
+            headers={
+                "Authorization": f"Bearer {api_key}", 
+                "Content-Type": "application/json",
+                "User-Agent": "curl/7.81.0"
+            }
         )
         resp = urllib.request.urlopen(req, timeout=25)
         data = json.loads(resp.read().decode("utf-8"))
